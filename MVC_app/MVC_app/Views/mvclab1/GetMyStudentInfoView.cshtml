@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetMyStudentInfoView</title>
+</head>
+<body>
+    <div> 
+        @{ 
+            MVC_app.Models.MyStudentInfo myStudent1 = (MVC_app.Models.MyStudentInfo)
+                ViewData["MyStudentInfo"];
+        }
+        <h1>Name: @myStudent1.Name @myStudent1.Surname</h1>
+        <h2 style="color: red;">Student Code: @myStudent1.StudentCode</h2>
+    </div>
+</body>
+</html>

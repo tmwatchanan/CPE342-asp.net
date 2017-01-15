@@ -1,0 +1,66 @@
+﻿
+@{
+    Layout = null;
+}
+@*Strongly Typed View*@
+@*@model MVC_app.Models.Employee*@
+@*@using MVC_app.Models*@
+@*@model Employee*@
+
+@*ViewModel*@
+@using MVC_app.ViewModels
+@model EmployeeViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EmployeeView</title>
+</head>
+<body>
+    <div>
+        @*<b>Employee Details </b><br />*@
+
+@*ViewData*@
+        @*@{
+            MVC_app.Models.Employee emp = (MVC_app.Models.Employee)
+                ViewData["Employee"];
+        }*@
+
+@*ViewBag*@
+        @*@{
+            Employee emp = ViewBag.Employee;
+        }      
+        Employee Name : @emp.FirstName@emp.LastName <br />
+        Employee Salary: @emp.Salary.ToString("C")*@
+
+@*Strongly typed view*@
+        @*Employee name : @Model.FirstName @Model.LastName <br />
+        
+        @if (Model.Salary > 15000)
+        {
+            <span style="background-color: yellow">
+                Employee Salary : @Model.Salary.ToString("C")
+            </span>
+        }
+        else
+        {
+            <span style="background-color: green">
+                Employee Salary : @Model.Salary.ToString("C")
+            </span>
+        }*@
+
+@*ViewModel*@
+        Hello @Model.Username
+        <hr />
+        <div>
+            <b>Employee Details:</b><br />
+                Employee Name: @Model.EmployeeName<br />
+            <span style="background-color:@Model.SalaryColor">
+                Employee Salary: @Model.Salary
+            </span>
+        </div>
+    </div>
+</body>
+</html>
